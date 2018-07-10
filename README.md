@@ -1,6 +1,6 @@
 # Classification of data read form MEMS cancer (Impedance) sensor by a Multi-Layer-Perceprton (MLP) Classifier 
 
-This work studies the impedance verses frequency characteristics of a blood cell to detect the level of malignancy in it. The developed MEMS is connected to Analog Device's AD5933 impedance analyzer, the AD5933 after performing a frequency sweep from 1kHz to 100kHz reports the impedance data (100 samples) back to an Arduino over the i2c bus. The impedance data so collected is then passed on to a MLP classifier to print out the degree of malignancy in a given sample of human blood. The MPL classifier used here is two layes deep and uses 100 input neurons. The MLP classifier is implemented on Python 2.7 using sklearn on a Raspberry Pi zero W running Raspbian Lite.   
+This work studies the impedance verses frequency characteristics of a blood cell to detect the level of malignancy in it. The developed MEMS sensor is connected to Analog Device's AD5933 impedance analyzer, the AD5933 after performing a frequency sweep from 1kHz to 100kHz reports the impedance data (100 samples) back to an Arduino over the i2c bus. The impedance data so collected is then passed on to a MLP classifier to print out the degree of malignancy in a given sample of human blood. The MPL classifier used here is two layes deep and uses 100 input neurons. The MLP classifier is implemented on Python 2.7 using sklearn on a Raspberry Pi zero W running Raspbian Lite.   
 
 ## Getting Started
 
