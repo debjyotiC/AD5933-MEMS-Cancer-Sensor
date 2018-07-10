@@ -4,24 +4,25 @@ This work studies the impedance verses frequency characteristics of a blood cell
 
 ## Getting Started
 
-To get started copy the ann_ad5933_serial_support.py, sensor_data_cancer_test.csv and sensor_data_cancer_train.csv files to a desired folder. The Arduino must be kept conneted to the h/w UART of the Raspberry Pi zero W via a TTL level shifter (as the Pi and Arduino uses different TTl levels).
+To get started copy the `ann_ad5933_serial_support.py`, `sensor_data_cancer_test.csv` and `sensor_data_cancer_train.csv` files to a desired folder. The Arduino must be kept conneted to the h/w UART of the Raspberry Pi zero W via a TTL level shifter (as the Pi and Arduino uses different TTl levels).
 
 ### Prerequisites
 
 The support modules required to run the code are :
      
-      1. NumPy --> 
-      2. SciPy --> 
+      1. NumPy --> For numerial calculations
+      2. SciPy --> For scientific calculations  
       3. Pandas --> To prase the CSV files
       4. Sklearn --> To implement the neural network
 
 ### Installing
 
-To install all the above dependencies have the latest version of "pip => 1.5.4" installed. (check: $pip -V).
-    1. To install NumPy --> sudo pip install numpy
-    2. To install SciPy --> sudo pip install scipy
-    3. To install Pandas --> sudo pip install pandas
-    4. To install Sklearn --> sudo pip install sklearn
+To install all the above dependencies have the latest version of "pip => 1.5.4" installed. (check: $pip -V):
+
+      1. To install NumPy --> sudo pip install numpy
+      2. To install SciPy --> sudo pip install scipy
+      3. To install Pandas --> sudo pip install pandas
+      4. To install Sklearn --> sudo pip install sklearn
 
 ## Running the tests
 
@@ -30,14 +31,6 @@ To run the code `$python ann_ad5933_serial_support.py` with the Arduino connecte
 
 After training on the data from `sensor_data_cancer_train.csv` the prediction is done, the code returns the malignancy state (i.e. Cancerous or Normal) along with the predicted label (i.e. [1] or [0]). To furthur tune the network change the number of neurons in the hidden layers at `clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(50, 2), random_state=1)`
 
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Built With
 
@@ -48,14 +41,10 @@ Give an example
 
 * **Debjyoti Chowdhury** - *Initial work* - [MyGithub](https://github.com/debjyotiC)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* **Dr. Madhurima Chattopadhyay** -*For the MEMS sensor and idea for the project* [LinkedIn](https://www.linkedin.com/in/dr-madhurima-chattopadhyay-1a62294a/)
