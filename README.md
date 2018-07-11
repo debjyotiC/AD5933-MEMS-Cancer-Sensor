@@ -31,6 +31,8 @@ After uploading the `ad5833_arduino_code` to the Arduino, run the code `$python 
 
 After training on the data from `sensor_data_cancer_train.csv` the prediction is done, the code returns the malignancy state (i.e. Cancerous or Normal) along with the predicted label (i.e. [1] or [0]). To furthur tune the network change the number of neurons in the hidden layers at `clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(50, 2), random_state=1)`
 
+The graph between THP and PHA cell line impedance is, 
+<img src="https://github.com/debjyotiC/AD5933-MEMS-Cancer-Sensor/blob/master/thp_pha_imp.png" width="580">
 
 ## Built With
 
