@@ -4,7 +4,7 @@ This work studies the impedance verses frequency characteristics of a blood cell
 
 ## Getting Started
 
-To get started copy the `ann_ad5933_serial_support.py`, `sensor_data_cancer_test.csv` and `sensor_data_cancer_train.csv` files to a desired folder. The Arduino must be kept conneted to the h/w UART of the Raspberry Pi zero W via a TTL level shifter (as the Pi and Arduino uses different TTl levels).
+To get started copy the `ann_ad5933_serial_support.py`, `sensor_data_cancer_test.csv` and `sensor_data_cancer_train.csv` files to a desired folder. The Arduino must be kept conneted to the h/w UART of the Raspberry Pi zero W via a TTL level shifter (as the Pi and Arduino uses different TTL levels).
 
 ### Prerequisites
 
