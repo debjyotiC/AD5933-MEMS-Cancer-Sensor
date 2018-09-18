@@ -6,7 +6,7 @@ import RPi.GPIO as GPIO
 import os
 from time import sleep  # for delay
 
-portAddr = '/dev/ttyACM0'  # Arduino communication port
+portAddr = '/dev/ttyS0'  # Arduino communication port
 baudRate = 9600  # Arduino comm. baud
 impedance = []   # empty list to store impedance data
 
@@ -85,13 +85,13 @@ def action():
       sleep(0.2)
       serialRead(portAddr, baudRate)
       writetoCSV(impedance)
-      sleep(3)
+      sleep(1)
       learnIt(df_train, df_test)
     if GPIO.input(16) == GPIO.HIGH:
         flagit = True
         if flagit and itr == 5:
           print 'Shutting down'
-          sleep(0.5)
+          sleep(0.1)
           os.system('sudo shutdown now -h')
         itr = itr+1
         print 'count down', itr
@@ -101,6 +101,7 @@ def action():
       flagit = False
 
 def main():
+  print '#####Ready####'
   action()
 
 if __name__ == '__main__':
