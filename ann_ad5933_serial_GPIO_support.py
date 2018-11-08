@@ -1,7 +1,7 @@
 # import it all
 from sklearn.neural_network import MLPClassifier  # import neural MLP classifier
 import pandas as pd  # import pandas for CSV file
-import serial  # to handel serial data to Arduino
+import serial  # to handle serial data to Arduino
 import RPi.GPIO as GPIO
 import os
 from time import sleep  # for delay
