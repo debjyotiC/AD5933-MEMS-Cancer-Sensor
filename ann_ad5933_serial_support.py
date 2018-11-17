@@ -4,7 +4,8 @@ import pandas as pd  # import pandas for CSV file
 import serial  # to handel serial data to Arduino
 from time import sleep  # for delay
 
-portAddr = '/dev/ttyACM0'  # Arduino communication port
+#portAddr = '/dev/ttyACM0'  # Arduino communication port
+portAddr = 'COM5'
 baudRate = 9600  # Arduino comm. baud
 impedance = []   # empty list to store impedance data
 

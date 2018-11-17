@@ -101,7 +101,7 @@ def action():
       flagit = False
 
 def main():
-  print '#####Ready####'
+  print '####Ready####'
   action()
 
 if __name__ == '__main__':
