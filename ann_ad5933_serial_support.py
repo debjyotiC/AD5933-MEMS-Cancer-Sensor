@@ -4,8 +4,9 @@ import pandas as pd  # import pandas for CSV file
 import serial  # to handel serial data to Arduino
 from time import sleep  # for delay
 
-#portAddr = '/dev/ttyACM0'  # Arduino communication port
-portAddr = 'COM5'
+
+portAddr = '/dev/ttyS0'  # Arduino communication port
+#portAddr = 'COM5'
 baudRate = 9600  # Arduino comm. baud
 impedance = []   # empty list to store impedance data
 
@@ -13,13 +14,14 @@ df_train = pd.read_csv('sensor_data_cancer_train.csv') # open train CSV file
 df_test = pd.read_csv('sensor_data_cancer_test.csv')   # open test CSV file
 
 def serialRead(port, baud):
-    ser = serial.Serial(port, baud)
+    ser = serial.Serial(port, baud, timeout = 3.0)
     sleep(2)
     ser.write('C')
     sleep(2)
     for itr in xrange(100):
         dataRead = ser.readline()
-        impedance.append(float(dataRead))
+        impedance.append(float(dataRead.split('\n\r')))
+    ser.close()
 
 def writetoCSV(val):
     df_w = pd.DataFrame(val, columns=["datagot"])
@@ -43,7 +45,6 @@ def learnIt(df_train_samples, df_test_samples):
 
     # prepare test data
     test_data = df_test_samples['datagot'].tolist()
-
     # predict test data label
     fit_it = clf.predict([test_data])
 
