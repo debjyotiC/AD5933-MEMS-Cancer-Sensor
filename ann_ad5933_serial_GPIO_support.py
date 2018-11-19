@@ -23,19 +23,21 @@ GPIO.output(11,False)
 GPIO.output(13,False)
 GPIO.output(15,False)
 
-df_train = pd.read_csv('sensor_data_cancer_train.csv') # open train CSV file
-df_test = pd.read_csv('sensor_data_cancer_test.csv')   # open test CSV file
+df_train = pd.read_csv('/home/pi/python_apps/AD5933-MEMS-Cancer-Sensor/sensor_data_cancer_train.csv') # open train CSV file
+df_test = pd.read_csv('/home/pi/python_apps/AD5933-MEMS-Cancer-Sensor/sensor_data_cancer_test.csv')   # open test CSV file
 
 def serialRead(port, baud):
-    ser = serial.Serial(port, baud)
+    ser = serial.Serial(port, baud, timeout=3.0)
     sleep(2)
     ser.write('C')
     sleep(2)
     for itr in xrange(100):
         dataRead = ser.readline()
-        impedance.append(float(dataRead))
+	#print dataRead, type(dataRead)
+        impedance.append(dataRead.split('\n\r'))
         GPIO.output(15,True)
     GPIO.output(15,False)
+    ser.close()
 
 def writetoCSV(val):
     df_w = pd.DataFrame(val, columns=["datagot"])
@@ -58,7 +60,7 @@ def learnIt(df_train_samples, df_test_samples):
     clf.fit(training_data, labels)
 
     # prepare test data
-    test_data = df_test_samples['datagot'].tolist()
+    test_data = df_test_samples['datagot'].astype('float64').tolist()
 
     # predict test data label
     fit_it = clf.predict([test_data])
@@ -76,6 +78,25 @@ def learnIt(df_train_samples, df_test_samples):
     sleep(10)
     GPIO.output(11,False)
     GPIO.output(13,False)
+
+
+def glow_leds():
+  for i in range(3):
+    GPIO.output(11,True)
+    GPIO.output(13,False)
+    GPIO.output(15,False)
+    sleep(1)
+    GPIO.output(11,False)
+    GPIO.output(13,True)
+    GPIO.output(15,False)
+    sleep(1)
+    GPIO.output(11,False)
+    GPIO.output(13,False)
+    GPIO.output(15,True)
+    sleep(1)
+  GPIO.output(11,False)
+  GPIO.output(13,False)
+  GPIO.output(15,False)
 
 def action():
   flagit = False
@@ -102,6 +123,7 @@ def action():
 
 def main():
   print '####Ready####'
+  glow_leds()
   action()
 
 if __name__ == '__main__':
