@@ -36,7 +36,7 @@ The graph between THP and PHA cell line impedance is,
 
 
 The device while displaying the nature of malignancy, `Red` for Cancerous and `Green` for normal blood sample , 
-<img align="center" src="https://github.com/debjyotiC/AD5933-MEMS-Cancer-Sensor/blob/master/images/Cancerous.jpg" width="200">
+<img align="left" src="https://github.com/debjyotiC/AD5933-MEMS-Cancer-Sensor/blob/master/images/Cancerous.jpg" width="200">
 <img align="center" src="https://github.com/debjyotiC/AD5933-MEMS-Cancer-Sensor/blob/master/images/not_cancerous.jpg" width="200">
 
 
