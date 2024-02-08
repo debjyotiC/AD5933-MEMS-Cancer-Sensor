@@ -52,7 +52,3 @@ The device while displaying the nature of malignancy, `Red` for Cancerous and `G
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* **Dr. Madhurima Chattopadhyay** -*For the MEMS sensor and idea for the project* [LinkedIn](https://www.linkedin.com/in/dr-madhurima-chattopadhyay-1a62294a/)
